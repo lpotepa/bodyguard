@@ -95,7 +95,7 @@ defmodule Bodyguard.Plug.Authorize do
     user_fun.(conn)
   end
   
-  defp get_params(conn, params_fun) when is_function(params_fun, 2) do
+  defp get_params(conn, params_fun) when is_function(params_fun, 1) do
     params_fun.(conn)
   end
 
