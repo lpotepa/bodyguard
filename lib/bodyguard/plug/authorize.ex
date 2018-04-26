@@ -68,7 +68,7 @@ defmodule Bodyguard.Plug.Authorize do
       opts.policy,
       get_action(conn, opts.action),
       get_user(conn, opts.user_fun),
-      opts.params
+      conn.params
     )
 
     conn
@@ -79,7 +79,7 @@ defmodule Bodyguard.Plug.Authorize do
            opts.policy,
            get_action(conn, opts.action),
            get_user(conn, opts.user_fun),
-           get_params(conn, opts.params_fun)
+           conn.params
          ) do
       :ok ->
         conn
