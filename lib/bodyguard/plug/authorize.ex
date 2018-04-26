@@ -94,10 +94,6 @@ defmodule Bodyguard.Plug.Authorize do
   defp get_user(conn, user_fun) when is_function(user_fun, 1) do
     user_fun.(conn)
   end
-  
-  defp get_params(conn, params_fun) when is_function(params_fun, 1) do
-    params_fun.(conn)
-  end
 
   defp get_user(_conn, nil), do: nil
 
